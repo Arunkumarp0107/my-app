@@ -21,8 +21,7 @@ node{
    withCredentials([string(credentialsId: 'dockerPass', variable: 'dockerPassword')]) {
    sh "docker login -u saidamo -p ${dockerPassword}"
     }
-   sh 'docker push saidamo/myweb:0.0.2'
-	   
+   sh 'docker push saidamo/myweb:0.0.2'	   
    }
    stage('Nexus Image Push'){
    sh "docker login -u admin -p admin123 13.233.192.31:8083"
